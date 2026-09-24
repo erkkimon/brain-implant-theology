@@ -12,7 +12,14 @@ settings:
     over_lines: 10
   warn_about_similar_files:       # one concept, ONE document — update it,
     above: 0.82                   # don't clone a near-duplicate
-    ignore: ["**/__init__.py", "**/index.md", "**/log.md", "**/skilltree.md"]
+    # knowledge/scripture/ is excluded for two reasons. Correctness: chapters
+    # are GENERATED from a source text, so near-duplicates there are the
+    # Bible's own repetition (the synoptic gospels, Kings and Chronicles,
+    # genealogies) and not a contributor's copy-paste. Practicality: comparing
+    # 1,189 generated files pairwise makes the pre-commit hook take minutes.
+    # The rule still applies to everything written by hand.
+    ignore: ["**/__init__.py", "**/index.md", "**/log.md", "**/skilltree.md",
+             "_brain/knowledge/scripture/**"]
 
 # Add rules as you go. `henxels explain <path>` shows what applies to a path.
 henxels:
@@ -79,7 +86,11 @@ henxels:
       proved worthless. brainpick excludes raw/ from search results (see
       brainpick.toml) so it never drowns the distilled layers; grep it.
     in: ./_brain/raw/*
-    except: _brain/raw/index.md
+    # LICENCE.md is exempt from kebab-case on purpose: a licence file is
+    # recognised by its conventional uppercase name, the next henxel REQUIRES
+    # that exact spelling, and a licence nobody spots is a licence nobody
+    # honours. Convention beats house style here.
+    except: [_brain/raw/index.md, "**/LICENCE.md"]
     filename_casing: kebab-case
     allowed_filetypes: [.md, .txt, .csv, .json, .yaml, .toml, .html, .pdf, .png, .jpg]
 

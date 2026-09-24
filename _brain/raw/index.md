@@ -10,4 +10,6 @@ this folder from search results; grep it.
 * `translations/` — scripture texts as fetched from their sources, one folder
   per translation, each carrying a `LICENCE.md` stating its redistribution
   terms. A translation whose licence forbids redistribution is **not** stored
-  here; it is cited by reference only.
+  here; it is cited by reference only. `licence-audit.md` records the full
+  survey — which translations were cleared, which were rejected, and why.
+  Currently holds `kjv/` (public domain).
