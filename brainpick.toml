@@ -1,0 +1,40 @@
+# brainpick.toml — how this brain is compiled and served (SHARED policy, committed).
+# Machine-local model endpoints live in brainpick.local.toml beside this file —
+# it deep-merges over this one and stays out of git. Run `brainpick init` to
+# detect backends and mint a [bundle] id (a stable address for this brain).
+spec = "0.1"
+
+[bundle]
+root = "_brain"
+exclude = ["raw/*"]     # source material stays greppable but never surfaces in results
+id = "n4d79bfxkjv1ysobi5g7fu"   # minted once — an address for this brain, never a credential
+
+# License: scripture texts and quoted works each carry their own licence,
+# recorded with the text; public-domain editions are marked as such. Tooling
+# and conventions authored here are MIT. See LICENSE.
+
+[index]
+mode = "section"        # brainpick owns a generated block at the end of index.md
+
+[brain]
+format = 3              # the brainpick brain format (spec/85): day journals, todo/ and conventions/ in the brain
+# PUBLIC — write every page for a stranger on the internet.
+# This repository will be published. It reports what traditions teach; it never
+# endorses one. No host names, no fleet paths, no personal detail, no credentials.
+# The standing rule is _brain/conventions/written-to-be-public.md — read it before writing here.
+audience = "public"     # personal | team | public — who this brain is written for
+origin = "git@github.com:erkkimon/brain-implant-theology.git"
+
+# Memories fade — a ranking factor, never a deletion: a doc's search score is
+# multiplied by 2^(-age/half_life) on its `timestamp`, floored so it stays
+# recallable. Slow by default. When the lists silt up with stale material,
+# STEEPEN the curve here (fewer days) instead of deleting; a single page can
+# pin itself with `half_life: 0` in its frontmatter or let go with `half_life: 7`.
+[half_life]
+default = 365           # days; 0 = never fades
+[half_life.folders]     # folder → days, the most nested folder wins
+journals = 180          # episodic memory fades first
+todo = 90               # an open list should be a fresh list
+skills = 0              # procedural memory never fades
+conventions = 0         # rules never fade
+knowledge = 0           # scripture and doctrine do not go stale
