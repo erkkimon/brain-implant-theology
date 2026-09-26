@@ -7,7 +7,7 @@ spec = "0.1"
 [bundle]
 root = "_brain"
 exclude = ["raw/*"]     # source material stays greppable but never surfaces in results
-id = "n4d79bfxkjv1ysobi5g7fu"   # minted once — an address for this brain, never a credential
+id = "kay4zyljsuy909krumpau"   # minted once — an address for this brain, never a credential
 
 # License: scripture texts and quoted works each carry their own licence,
 # recorded with the text; public-domain editions are marked as such. Tooling

@@ -8,7 +8,7 @@ testament: nt
 division: Pastoral Epistles
 chapters: 4
 tags: [scripture, 2ti, pastoral-epistles]
-timestamp: 2026-09-24T22:00:00Z
+timestamp: 2026-09-26T11:40:00Z
 half_life: 0
 ---
 
@@ -17,6 +17,12 @@ half_life: 0
 Paul's last letter: guard the deposit, preach the word, endure.
 
 Part of the [New Testament](../nt.md) — Pastoral Epistles.
+
+## In the apologetics implant
+
+The Finnish apologetics implant hangs its articles about this book on a matching rung; its backlinks list the apologetic literature that cites it:
+
+<brain://apologetics-3hm51e1pxik7zz5la3bve/knowledge/books/2ti.md>
 
 ## Chapters
 

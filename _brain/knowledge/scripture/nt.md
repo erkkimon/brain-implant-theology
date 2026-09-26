@@ -4,7 +4,7 @@ about: scripture
 title: New Testament
 description: "The twenty-seven books of the apostolic witness: four gospels, the church's birth, letters to churches and pastors, and the apocalypse. The books below are each represented by a book article, which links to every chapter in that book."
 tags: [scripture, nt, testament]
-timestamp: 2026-09-24T22:00:00Z
+timestamp: 2026-09-26T11:40:00Z
 half_life: 0
 ---
 
@@ -41,3 +41,9 @@ The twenty-seven books of the apostolic witness: four gospels, the church's birt
 * [3 John](3jn/3jn.md) — Hospitality commended, and a self-serving leader named.
 * [Jude](jud/jud.md) — Contend for the faith against those who turn grace into licence.
 * [Revelation](rev/rev.md) — Seven churches, a heavenly throne, and the Lamb's victory over the beast.
+
+## In the apologetics implant
+
+The Finnish apologetics implant hangs its articles about this testament on a matching rung; its backlinks list the apologetic literature that cites it:
+
+<brain://apologetics-3hm51e1pxik7zz5la3bve/knowledge/books/nt.md>

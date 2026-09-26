@@ -3,7 +3,7 @@ type: plan
 title: "MVP first, then daily iteration"
 description: "The decided plan for both brain implants: a definition of the minimum lovable product for apologetics and theology, the quickest route to it, and the ordered iteration that follows. Born from Tom's 2026-09-25 instruction to get both brains usable before spending tokens on translation."
 tags: [plan, mvp, roadmap]
-timestamp: 2026-09-25T00:00:00Z
+timestamp: 2026-09-26T11:50:00Z
 ---
 
 # MVP first, then daily iteration
@@ -17,7 +17,7 @@ If those two disagree, the plan is the *why* and the todo is the *now* — fix
 the disagreement, don't act on a stale list.
 
 The decision record is
-[journals/2026-09-25.md](../journals/2026-09-25.md).
+[journals/2026-09-25.md](../journals/archive/2026/09/2026-09-25.md).
 
 ## The principle: content before polish
 

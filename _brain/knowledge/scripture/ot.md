@@ -4,7 +4,7 @@ about: scripture
 title: Old Testament
 description: "The thirty-nine books of the Hebrew Bible, from creation to the prophets — the scripture Jesus and the apostles read, cite, and fulfil. The books below are each represented by a book article, which links to every chapter in that book."
 tags: [scripture, ot, testament]
-timestamp: 2026-09-24T22:00:00Z
+timestamp: 2026-09-26T11:40:00Z
 half_life: 0
 ---
 
@@ -53,3 +53,9 @@ The thirty-nine books of the Hebrew Bible, from creation to the prophets — the
 * [Haggai](hag/hag.md) — Rebuild the temple: God's house before your own houses.
 * [Zechariah](zec/zec.md) — Night visions, two olive branches, and a coming king.
 * [Malachi](mal/mal.md) — The last prophet before silence: robbing God, and a messenger to come.
+
+## In the apologetics implant
+
+The Finnish apologetics implant hangs its articles about this testament on a matching rung; its backlinks list the apologetic literature that cites it:
+
+<brain://apologetics-3hm51e1pxik7zz5la3bve/knowledge/books/ot.md>

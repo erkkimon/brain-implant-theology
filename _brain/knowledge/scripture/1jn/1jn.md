@@ -8,7 +8,7 @@ testament: nt
 division: General Epistles
 chapters: 5
 tags: [scripture, 1jn, general-epistles]
-timestamp: 2026-09-24T22:00:00Z
+timestamp: 2026-09-26T11:40:00Z
 half_life: 0
 ---
 
@@ -17,6 +17,12 @@ half_life: 0
 Light, love, and the test of true fellowship with God.
 
 Part of the [New Testament](../nt.md) — General Epistles.
+
+## In the apologetics implant
+
+The Finnish apologetics implant hangs its articles about this book on a matching rung; its backlinks list the apologetic literature that cites it:
+
+<brain://apologetics-3hm51e1pxik7zz5la3bve/knowledge/books/1jn.md>
 
 ## Chapters
 

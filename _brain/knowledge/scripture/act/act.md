@@ -8,7 +8,7 @@ testament: nt
 division: History
 chapters: 28
 tags: [scripture, act, history]
-timestamp: 2026-09-24T22:00:00Z
+timestamp: 2026-09-26T11:40:00Z
 half_life: 0
 ---
 
@@ -17,6 +17,12 @@ half_life: 0
 The Spirit given, the church born, and the gospel reaching Rome.
 
 Part of the [New Testament](../nt.md) — History.
+
+## In the apologetics implant
+
+The Finnish apologetics implant hangs its articles about this book on a matching rung; its backlinks list the apologetic literature that cites it:
+
+<brain://apologetics-3hm51e1pxik7zz5la3bve/knowledge/books/act.md>
 
 ## Chapters
 

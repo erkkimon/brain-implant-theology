@@ -8,7 +8,7 @@ testament: ot
 division: Writings
 chapters: 10
 tags: [scripture, ezr, writings]
-timestamp: 2026-09-24T22:00:00Z
+timestamp: 2026-09-26T11:40:00Z
 half_life: 0
 ---
 
@@ -17,6 +17,12 @@ half_life: 0
 The return from exile and the rebuilding of the temple.
 
 Part of the [Old Testament](../ot.md) — Writings.
+
+## In the apologetics implant
+
+The Finnish apologetics implant hangs its articles about this book on a matching rung; its backlinks list the apologetic literature that cites it:
+
+<brain://apologetics-3hm51e1pxik7zz5la3bve/knowledge/books/ezr.md>
 
 ## Chapters
 

@@ -2,7 +2,7 @@
 type: todo
 title: Open work
 description: "The live work queue for the theology implant — what is decided, unstarted, and waiting."
-timestamp: 2026-09-25T00:00:00Z
+timestamp: 2026-09-26T11:55:00Z
 ---
 
 # Open
@@ -14,21 +14,18 @@ of this structure for its own half.
 
 ## Phase 1 — Finish the interrupted spine work (machine time)
 
-- [ ] Narrow the verse-token henxel so it applies to chapter files only — it fires today on the book indexes in `knowledge/scripture/<code>/`, which carry no verse tokens by design
-- [ ] Re-measure ghosts after the link-path fixes and drive them to zero (`brainpick compile`, then read `t1/graph.json`)
-- [ ] Verify traversal both ways: a book article reaches every chapter, and a chapter reaches its book and its testament
+Done 2026-09-26 — see [the archive](archive/2026-09-26.md).
 
 ## Phase 2 — Bind the spine to apologetics (machine time)
 
-- [ ] Declare the apologetics implant under `[brains]` in `brainpick.toml` with a stable id
-- [ ] From each book article, link across the federation boundary (the `{brain://apologetics}` suffix form) to the apologetic literature about that book
-- [ ] Keep apocrypha outside the spine: ordinary articles that link to canon, never a rung of it
+- [ ] Keep apocrypha outside the spine: ordinary articles that link to canon, never a rung of it (standing rule; closes when the first apocryphal article lands and obeys it)
+- [ ] Verify through a live `brain_read` that a theology book page shows the apologetics rung as an annotation — the links land by id (136/136 checked by script), but serving the full set compiles every registered brain first
 
 ## Phase 3 — Fill the spine with texts (machine time)
 
 - [ ] Ingest Raamattu 1933/38 as the Finnish spine — Raamattu 1992 is licence-blocked and may only be cited by reference
 - [ ] Ingest the source-language texts: Biblia Hebraica (WLC), Textus Receptus, Westcott-Hort — so a chapter page carries Hebrew or Greek alongside its translations
-- [ ] Pull a multilingual embedding model (`ollama pull bge-m3`) and rerun `brainpick init` — the detected `nomic-embed-text` is English-only, and this brain will hold English, Finnish, Greek and Hebrew text
+- [ ] Build the T2 vectors with `bge-m3` (already pulled and set in `brainpick.local.toml` on the apologetics side) — the detected `nomic-embed-text` is English-only; on a CPU-only backend the build takes hours, so run it as a background job
 
 ## Phase 4 — The MVP gate
 

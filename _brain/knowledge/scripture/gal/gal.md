@@ -8,7 +8,7 @@ testament: nt
 division: Pauline Epistles
 chapters: 6
 tags: [scripture, gal, pauline-epistles]
-timestamp: 2026-09-24T22:00:00Z
+timestamp: 2026-09-26T11:40:00Z
 half_life: 0
 ---
 
@@ -17,6 +17,12 @@ half_life: 0
 Justification by faith alone; no return to the law.
 
 Part of the [New Testament](../nt.md) — Pauline Epistles.
+
+## In the apologetics implant
+
+The Finnish apologetics implant hangs its articles about this book on a matching rung; its backlinks list the apologetic literature that cites it:
+
+<brain://apologetics-3hm51e1pxik7zz5la3bve/knowledge/books/gal.md>
 
 ## Chapters
 
