@@ -287,6 +287,10 @@ henxels:
       Without them the brain is silently unsearchable in its most important
       direction. See conventions/addressing-scripture.md.
     in: ./_brain/knowledge/scripture/*
-    except: ./_brain/knowledge/scripture/index.md
+    except:
+      - ./_brain/knowledge/scripture/index.md
+      - ./_brain/knowledge/scripture/ot.md
+      - ./_brain/knowledge/scripture/nt.md
+      - ./_brain/knowledge/scripture/*/*.md
     required_frontmatter: [type, title, description, verses]
     verse_tokens_well_formed: ./_brain/knowledge/scripture    # custom check, lives in henxels_checks.py

@@ -6,7 +6,7 @@ description: "How to bring a new scripture translation into this brain: clear it
 tags: [skill, scripture, ingest, licensing, translations]
 depends_on: [skills/using-the-brain.md]
 tools: [skills/tools/bible_ingest.py, skills/tools/bookcodes.py]
-timestamp: 2026-09-24T20:00:00Z
+timestamp: 2026-09-25T22:30:00Z
 half_life: 0
 ---
 
@@ -14,7 +14,7 @@ half_life: 0
 
 Grounded in [addressing scripture](../conventions/addressing-scripture.md),
 which is why the tokens exist at all, and in the licence decisions recorded in
-[the founding journal](../journals/2026-09-24.md).
+[the founding journal](../journals/archive/2026/09/2026-09-24.md).
 
 Use when adding scripture text to `knowledge/scripture/`. The order matters:
 **licence first, text second.** A translation whose terms you have not read is

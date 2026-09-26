@@ -178,6 +178,28 @@ that adds a claim adds its citation in the same change; a contribution that
 adds a translation records its licence. The contract checks what it can check
 mechanically, and a human reviews the rest.
 
+## How the content is produced — and a disclaimer
+
+All information in this repository is **distilled by AI agents** from the
+cited sources, under the contract above, and reviewed by humans only to the
+extent the maintainers and contributors have had time for. The contract
+checks what can be checked mechanically — that links land, that citations are
+present, that no contested theological claim is asserted in the implant's own
+voice — but it cannot check that a source was read correctly or that a
+quotation is accurate. Errors of transcription, attribution and interpretation
+are therefore possible on any page, and every receipt is there precisely so
+that you can verify the claim yourself before relying on it. Scripture texts
+are ingested from their stated editions; the ingest is mechanical, but a
+transcription error is still possible, so check the cited edition before
+quoting a verse from here.
+
+The content is provided **as is**, without warranty of any kind, express or
+implied. Nothing here is professional, pastoral or legal advice, and nothing
+here is a statement of the maintainers' own views: the implant reports what
+named theologians, councils and traditions have said, and any error in such a
+report is an error of the implant, not a claim of the source. If you find one,
+open an issue or a pull request.
+
 ## Licensing
 
 Tooling and conventions authored here are **MIT**. Scripture texts and quoted

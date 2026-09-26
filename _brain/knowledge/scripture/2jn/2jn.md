@@ -1,0 +1,23 @@
+---
+type: article
+about: scripture
+title: 2 John
+description: "Walking in truth and love, and refusing those who deny Christ's flesh. 1 chapter; each is individually addressable by atomic verse token — see [addressing scripture](/conventions/addressing-scripture.md)."
+book: 2jn
+testament: nt
+division: General Epistles
+chapters: 1
+tags: [scripture, 2jn, general-epistles]
+timestamp: 2026-09-24T22:00:00Z
+half_life: 0
+---
+
+# 2 John
+
+Walking in truth and love, and refusing those who deny Christ's flesh.
+
+Part of the [New Testament](../nt.md) — General Epistles.
+
+## Chapters
+
+* [2 John 1](/knowledge/scripture/2jn001.md)

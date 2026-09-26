@@ -4,14 +4,14 @@ about: concept
 title: Reporting, not endorsing
 description: "The neutrality rule that lets every Christian tradition share one repository: a page proves that a named theologian, council or confession said something — that claim is checkable and either true or false — and never asserts that what they said is correct; this also fixes the boundary with the apologetics implant, where the opponent is outside the faith rather than inside it."
 tags: [convention, neutrality, npov, scope, theology, ecumenism]
-timestamp: 2026-09-24T18:00:00Z
+timestamp: 2026-09-25T22:30:00Z
 half_life: 0
 ---
 
 # Reporting, not endorsing
 
 Decided by Tom on 2026-09-24, founding the theology implant
-([journal](../journals/2026-09-24.md)).
+([journal](../journals/archive/2026/09/2026-09-24.md)).
 
 ## The rule
 

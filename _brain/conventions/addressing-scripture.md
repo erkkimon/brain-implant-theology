@@ -4,7 +4,7 @@ about: concept
 title: Addressing scripture
 description: "A verse is addressed by an atomic reference token — jhn14v6 — carried in the chapter document's frontmatter and in the verse's own heading, because brainpick's BM25 tokenizer splits John 14:6 into john/14/6 and cannot then tell it apart from John 6:14; the token is the retrieval key that makes finding content by verse work at all, and it is written by the ingest tool, never by hand."
 tags: [convention, scripture, retrieval, addressing, bible, search]
-timestamp: 2026-09-24T18:00:00Z
+timestamp: 2026-09-25T22:30:00Z
 half_life: 0
 ---
 
@@ -98,6 +98,6 @@ the headings. A hand-written token is a bug waiting to happen — a wrong one
 is invisible, which is exactly the failure this convention exists to prevent.
 
 Grounded in the tokenizer's actual behaviour, measured against brainpick 0.7.0
-on 2026-09-24 ([journal](../journals/2026-09-24.md)), and serving the structure
+on 2026-09-24 ([journal](../journals/archive/2026/09/2026-09-24.md)), and serving the structure
 set out in [the theology implant](../vision/the-theology-implant.md), where
 scripture is the spine the rest of the brain attaches to.
