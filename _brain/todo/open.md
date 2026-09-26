@@ -2,7 +2,7 @@
 type: todo
 title: Open work
 description: "The live work queue for the theology implant — what is decided, unstarted, and waiting."
-timestamp: 2026-09-26T11:55:00Z
+timestamp: 2026-09-26T14:00:00Z
 ---
 
 # Open
@@ -25,7 +25,6 @@ Done 2026-09-26 — see [the archive](archive/2026-09-26.md).
 
 - [ ] Ingest Raamattu 1933/38 as the Finnish spine — Raamattu 1992 is licence-blocked and may only be cited by reference
 - [ ] Ingest the source-language texts: Biblia Hebraica (WLC), Textus Receptus, Westcott-Hort — so a chapter page carries Hebrew or Greek alongside its translations
-- [ ] Build the T2 vectors with `bge-m3` (already pulled and set in `brainpick.local.toml` on the apologetics side) — the detected `nomic-embed-text` is English-only; on a CPU-only backend the build takes hours, so run it as a background job
 
 ## Phase 4 — The MVP gate
 
