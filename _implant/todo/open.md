@@ -2,7 +2,7 @@
 type: todo
 title: Open work
 description: "The live work queue for the theology implant — what is decided, unstarted, and waiting."
-timestamp: 2026-09-27T10:30:00Z
+timestamp: 2026-09-27T14:00:00Z
 ---
 
 # Open
@@ -19,12 +19,11 @@ Done 2026-09-26 — see [the archive](archive/2026-09-26.md).
 ## Phase 2 — Bind the spine to apologetics (machine time)
 
 - [ ] Keep apocrypha outside the spine: ordinary articles that link to canon, never a rung of it (standing rule; closes when the first apocryphal article lands and obeys it)
-- [ ] Verify through a live `brain_read` that a theology book page shows the apologetics rung as an annotation — the links land by id (136/136 checked by script), but serving the full set compiles every registered brain first
 
 ## Phase 3 — Fill the spine with texts (machine time)
 
-- [ ] Ingest Raamattu 1933/38 as the Finnish spine — Raamattu 1992 is licence-blocked and may only be cited by reference
-- [ ] Ingest the source-language texts: Biblia Hebraica (WLC), Textus Receptus, Westcott-Hort — so a chapter page carries Hebrew or Greek alongside its translations
+- [ ] Ingest Biblia Hebraica (WLC) through a versification map: WLC numbers verses the Hebrew way, and 138 of its 929 chapters differ in verse count from the KJV numbering the tokens use (Gen 31–32, Exod 7–8, Mal 3–4 …). A naive ingest would put the wrong Hebrew under a token. Source: `scrollmapper/bible_databases` `formats/json/WLC.json` (MIT compilation, public-domain text)
+- [ ] Ingest Westcott–Hort (not in `scrollmapper/bible_databases`; find a cleared source first)
 
 ## Phase 4 — The MVP gate
 

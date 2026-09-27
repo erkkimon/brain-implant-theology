@@ -23,6 +23,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import time
 import json
 import re
 import sys
@@ -32,6 +33,22 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from bookcodes import CANON_ORDER, CODE_TO_NAME, code_for, human_ref, verse_token  # noqa: E402
 
 SECTION_RE = re.compile(r"^## (.+?) — (.+)$", re.M)
+
+
+# The deuterocanonical books as sources spell them (FinPR 1933/38 carries
+# them). The spine is the 66-book Protestant canon, and apocrypha are
+# ordinary articles that link to it, never rungs of it (plans/
+# mvp-then-iteration.md). Named here, not silently dropped, so the tool
+# can say exactly what it skipped.
+APOCRYPHA = {
+    "tobit", "judith", "esther (greek)", "wisdom", "sirach", "baruch",
+    "prayer of azariah", "susanna", "bel and the dragon", "i maccabees",
+    "ii maccabees", "i esdras", "prayer of manasses", "additional psalm",
+    "iii maccabees", "ii esdras", "iv maccabees",
+}
+
+
+TS_RE = re.compile(r"^timestamp:.*$", re.M)
 
 
 def load_source(path: Path) -> dict:
@@ -138,6 +155,11 @@ def main() -> int:
     ap.add_argument("--name", required=True, help='full name, e.g. "King James Version"')
     ap.add_argument("--abbrev", required=True, help="short code used as the section heading, e.g. KJV")
     ap.add_argument("--out", required=True, type=Path, help="knowledge/scripture directory")
+    ap.add_argument("--at", default=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                    help="timestamp for chapters this run changes (default: now)")
+    ap.add_argument("--skip-apocrypha", action="store_true",
+                    help="skip the deuterocanonical books a source carries "
+                         "(listed in APOCRYPHA); they stay outside the spine")
     ap.add_argument("--limit-books", nargs="*", default=None,
                     help="only these book names (for a smoke test)")
     args = ap.parse_args()
@@ -146,15 +168,33 @@ def main() -> int:
     args.out.mkdir(parents=True, exist_ok=True)
 
     written = skipped = 0
+    apocrypha: list[str] = []
     for book in data["books"]:
         if args.limit_books and book["name"] not in args.limit_books:
             continue
+        if args.skip_apocrypha and " ".join(book["name"].lower().split()) in APOCRYPHA:
+            apocrypha.append(book["name"])
+            continue
         code = code_for(book["name"])
         for ch in book["chapters"]:
+            # Some sources pad the testament they lack with empty verses
+            # (the TR carries a blank Old Testament): an empty verse is no
+            # rendering, and an all-empty chapter is no section at all.
+            ch = {**ch, "verses": [v for v in ch["verses"] if str(v["text"]).strip()]}
+            if not ch["verses"]:
+                continue
             n = int(ch["chapter"])
             path = args.out / f"{code}{n:03d}.md"
             existing = path.read_text(encoding="utf-8") if path.exists() else None
             doc = render_chapter(code, n, ch["verses"], args.name, args.abbrev, existing)
+            # The contract wants `timestamp` bumped when a chapter changes and
+            # left alone when it does not: keep the old stamp on an unchanged
+            # chapter (so a re-ingest still diffs empty), stamp --at otherwise.
+            old_ts = TS_RE.search(existing) if existing else None
+            if old_ts and TS_RE.sub("", existing) == TS_RE.sub("", doc):
+                doc = TS_RE.sub(old_ts.group(0), doc, count=1)
+            else:
+                doc = TS_RE.sub(f"timestamp: {args.at}", doc, count=1)
             if existing == doc:
                 skipped += 1
                 continue
@@ -162,6 +202,9 @@ def main() -> int:
             written += 1
 
     print(f"{args.abbrev}: {written} chapter documents written, {skipped} unchanged", flush=True)
+    if apocrypha:
+        print(f"{args.abbrev}: skipped {len(apocrypha)} apocryphal books: "
+              + ", ".join(apocrypha), flush=True)
     return 0
 
 

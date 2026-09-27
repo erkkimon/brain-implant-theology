@@ -15,7 +15,7 @@ by us.
 | Translation | Site's terms | May we redistribute? |
 | --- | --- | --- |
 | **Raamattu 1992** | Kirkon keskusrahasto; "kopioiminen ja edelleen levittäminen on **ehdottomasti kielletty**" | **NO — forbidden outright** |
-| Raamattu 1933/38 | Vapaassa käytössä | YES |
+| Raamattu 1933/38 | Vapaassa käytössä | YES — the publisher itself says the copyright has expired (see `finpr/LICENCE.md`); ingested 2026-09-27 |
 | Biblia 1776 | Vapaassa käytössä | YES |
 | STLK 2017 | CC BY-NC-ND 4.0 | NO for this repo — ND forbids derivatives, and chapter-splitting with added tokens is a derivative; NC also conflicts with unrestricted public reuse |
 | Folkbibeln 2015 | © Stiftelsen Svenska Folkbibeln | NO |
@@ -42,7 +42,7 @@ by us.
 | Biblia Hebraica (Westminster Leningrad Codex) | Vapaassa käytössä | YES |
 | SBLGNT | © 2010 SBL & Logos; free to distribute, **may not be sold on its own** | LIKELY YES — needs the upstream licence read directly before ingest |
 | Westcott-Hort | Vapaassa käytössä | YES |
-| **Textus Receptus** | Vapaassa käytössä | YES |
+| **Textus Receptus** | Vapaassa käytössä | YES — ingested 2026-09-27 (`tr/LICENCE.md`) |
 | Bysantin tekstilaitos | Vapaassa käytössä | YES |
 
 ## The finding that matters most

@@ -3,7 +3,7 @@ type: plan
 title: "MVP first, then daily iteration"
 description: "The decided plan for both brain implants: a definition of the minimum lovable product for apologetics and theology, the quickest route to it, and the ordered iteration that follows. Born from Tom's 2026-09-25 instruction to get both brains usable before spending tokens on translation."
 tags: [plan, mvp, roadmap]
-timestamp: 2026-09-27T10:30:00Z
+timestamp: 2026-09-27T14:00:00Z
 ---
 
 # MVP first, then daily iteration
@@ -67,7 +67,7 @@ original theology-flavoured pages.
   roots
 - book articles cross-bound to the apologetics implant (`brain://`) so
   a book page reaches the apologetic literature about it
-- Finnish spine: PR-1933/38 chapters ingested (1992 is licence-blocked)
+- Finnish spine: PR-1933/38 chapters ingested (1992 is licence-blocked) — done 2026-09-27
 - source-language texts ingested (WLC, Textus Receptus, Westcott-Hort) so a
   chapter page carries Hebrew/Greek alongside translations
 - `bge-m3` compiled in (this implant already holds English, will hold Finnish,
@@ -145,8 +145,12 @@ last.
 - **Done (2026-09-27):** the bundle root is `_implant/` (formerly `_brain/`).
   This repository is an implant; the cortex is the agent's own brain
   ([journal](../journals/2026-09-27.md)).
-- **Next, machine time:** Phase 2's live annotation check, then Phase 3 texts
-  (PR-1933/38, WLC, TR, Westcott–Hort), each via
+- **Done (2026-09-27):** the live annotation check passed. `brain_read` on a
+  theology book page lists the apologetics rung, and the reverse works too.
+  Raamattu 1933/38 (`PR1938`, 1 189 chapters) and the Textus Receptus
+  (`TR`, 260 NT chapters) now sit beside the KJV in every chapter file.
+- **Next, machine time:** WLC through a versification map, then
+  Westcott–Hort, each via
   [Add a Bible translation](../skills/add-bible-translation.md).
 - **Then:** the Phase 4 gate. Tom uses both implants on a real question.
   No translation tokens are spent before he calls it lovable.

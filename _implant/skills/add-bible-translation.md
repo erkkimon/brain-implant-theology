@@ -6,7 +6,7 @@ description: "How to bring a new scripture translation into this implant: clear 
 tags: [skill, scripture, ingest, licensing, translations]
 depends_on: [skills/using-the-brain-implant.md]
 tools: [skills/tools/bible_ingest.py, skills/tools/bookcodes.py]
-timestamp: 2026-09-27T10:30:00Z
+timestamp: 2026-09-27T14:00:00Z
 half_life: 0
 ---
 
@@ -74,6 +74,14 @@ python3 _implant/skills/tools/bible_ingest.py \
     --out _implant/knowledge/scripture
 ```
 
+Options that matter for other sources: `--skip-apocrypha` drops the
+deuterocanonical books a source carries, listed by name in the tool, since
+they stay outside the spine. `--at` sets the timestamp of the chapters this
+run changes; unchanged chapters keep theirs, so a re-run still diffs empty.
+Verses with empty text are skipped, because some sources pad the testament
+they lack. Stored so far: KJV, Raamattu 1933/38 (`PR1938`) and the Textus
+Receptus (`TR`, New Testament).
+
 It expects `{translation, books:[{name, chapters:[{chapter, verses:[{verse,
 text}]}]}]}`. A source in another shape gets a small adapter script, not a
 hand-edited output.
@@ -123,5 +131,10 @@ has hung.
 * **Never store text you have not cleared.** Cite it by reference instead —
   quoting a verse in an article is ordinary right of quotation; storing the
   full text is redistribution.
+* **Never ingest a text in another versification as if it were KJV's.**
+  The tokens follow the KJV numbering. Before ingesting, compare verse counts
+  per chapter with `kjv.json`: FinPR and TR match (2 and 0 differing
+  chapters), WLC does not (138 of 929). A mismatch needs a versification map,
+  or the wrong verse lands under a token and nothing complains.
 * **Never edit `knowledge/scripture/` by hand.** The files are generated. Fix
   the source or the tool, then re-run.

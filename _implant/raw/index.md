@@ -12,4 +12,6 @@ this folder from search results; grep it.
   terms. A translation whose licence forbids redistribution is **not** stored
   here; it is cited by reference only. `licence-audit.md` records the full
   survey — which translations were cleared, which were rejected, and why.
-  Currently holds `kjv/` (public domain).
+  Currently holds `kjv/` (public domain) and `finpr/` (Raamattu 1933/38,
+  copyright expired; the chapters carry it as the `PR1938` section) and
+  `tr/` (Textus Receptus, public domain; the New Testament's `TR` section).
