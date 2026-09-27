@@ -38,7 +38,7 @@ Then `brainpick search`, `brainpick read`, `brainpick neighbors`. To wire it
 into an agent harness as an MCP server:
 
 ```bash
-brainpick register "$PWD/_brain"    # register once, then harnesses see it
+brainpick register "$PWD/_implant"    # register once, then harnesses see it
 brainpick integrate                 # writes harness config (Claude Code, opencode, …)
 ```
 
@@ -102,7 +102,7 @@ uv tool install "brainpick[vectors]"
 **Use 0.8.1 or later if you will run `brainpick serve`.** Earlier versions
 applied `[bundle] root` twice and served a path that does not exist, so the
 web UI showed a single generated index and nothing else. 0.7.0 remains the
-floor for reading this brain; 0.8.1 is the floor for serving it.
+floor for reading this implant; 0.8.1 is the floor for serving it.
 
 The latest release is otherwise recommended but not required.
 
@@ -110,7 +110,7 @@ The latest release is otherwise recommended but not required.
 
 ## How this repository is organised
 
-`_brain/` is the bundle. Its folders are memory types, one job each:
+`_implant/` is the bundle. Its folders are memory types, one job each:
 
 | Folder | Holds |
 | --- | --- |

@@ -4,7 +4,7 @@ about: concept
 title: Written to be public
 description: This implant is written for release to the open internet — every page is addressed to a stranger with no access to the machine it was written on, so no host names, internal paths, personal details or credentials ever enter it; the repository is private only until it is published, which changes nothing about how it is written.
 tags: [convention, publishing, privacy, scope]
-timestamp: 2026-09-25T22:30:00Z
+timestamp: 2026-09-27T10:30:00Z
 half_life: 0
 ---
 
@@ -15,7 +15,7 @@ Decided by Tom on 2026-09-24, while founding the theology implant
 it's not public yet, I will publish it later, but make sure that you know it
 and that you will know it also in the future."*
 
-So it is recorded here — in the brain, where an agent reads before it writes
+So it is recorded here — in the implant, where an agent reads before it writes
 — rather than in a README that would announce a private repository's future
 to nobody. It is also in `brainpick.toml` as `[brain] audience = "public"`,
 the field brainpick reports in `brain_overview`.
@@ -84,7 +84,7 @@ A one-time cleanup is a task; this is a property every future page must have,
 including pages written by agents that never read this conversation. It is
 `type: convention` with `half_life: 0` so it never fades out of
 `brain_overview`, and it is the first thing
-[Using the brain](../skills/using-the-brain.md) tells a writer to respect.
+[Using the brain implant](../skills/using-the-brain-implant.md) tells a writer to respect.
 
 ## When it is published
 

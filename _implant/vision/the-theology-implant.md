@@ -4,7 +4,7 @@ about: concept
 title: The theology implant
 description: "Why this implant exists apart from apologetics, what it is for, and the shape it grows into — scripture at chapter granularity as the spine, the traditions' positions hung off the verses they argue from, and a neutrality rule strict enough that Orthodox, Catholic, Lutheran, Reformed, Pentecostal and Adventist material can share one repository without it becoming an argument."
 tags: [vision, theology, scope, scripture, ecumenism]
-timestamp: 2026-09-24T18:00:00Z
+timestamp: 2026-09-27T10:30:00Z
 half_life: 0
 ---
 
@@ -27,7 +27,7 @@ boundary as a rule.
 
 Everything here hangs off the text. A doctrine is interesting because of the
 chapters it rests on; a theologian is interesting because of what they made of
-those chapters. So the Bible is not a reference appendix to this brain — it is
+those chapters. So the Bible is not a reference appendix to this implant — it is
 the index the rest attaches to, held at chapter granularity, with every verse
 individually addressable.
 

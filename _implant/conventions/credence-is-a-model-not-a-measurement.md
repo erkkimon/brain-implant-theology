@@ -4,7 +4,7 @@ about: concept
 title: Credence is a model, not a measurement
 description: Numeric probabilities attached to hypotheses in this implant are the output of a stated, replayable model — a decomposition into factors, a prior, and explicit likelihood ratios with their justifications — never a claim to have measured a truth; the contribution is the structure and its defensible inputs, so any reader can substitute their own numbers and recompute, and the spread of results across reasonable inputs is itself the report on how much of a belief is evidence and how much is faith.
 tags: [convention, bayesian, epistemics, credence, uncertainty, replicability]
-timestamp: 2026-09-25T22:30:00Z
+timestamp: 2026-09-27T10:30:00Z
 half_life: 0
 ---
 
@@ -53,7 +53,7 @@ this is worth doing even though none of the numbers are measurements.
    inputs that produced it. A number nobody can replay is decoration.
 2. **Every input is labelled by kind** — `cited` (a measured or published
    value), `derived` (computed from cited inputs), or `elicited` (this
-   brain's judgement, with its reasoning written out). The proportions of
+   implant's judgement, with its reasoning written out). The proportions of
    each kind across a model are themselves reported: a model built from
    twelve elicited inputs is a different object from one built from ten
    cited ones, and the reader must be able to see which they are holding.

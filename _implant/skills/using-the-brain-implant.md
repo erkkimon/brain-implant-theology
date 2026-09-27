@@ -1,32 +1,49 @@
 ---
 type: skill
-title: Using the brain
-description: Use when reading from or writing to this project's brain — before answering from memory, before grepping, and before adding or changing any doc in _brain/.
-timestamp: 2026-09-24T16:00:00Z
+title: Using the brain implant
+description: "Use when reading from or writing to this brain implant — before answering from memory, before grepping, and before adding or changing any doc in _implant/. Explains what an implant is (mounted beside the agent's own brain, its cortex), where opinions go (the cortex, never here), and the read and write discipline the contract enforces."
+timestamp: 2026-09-27T10:30:00Z
 depends_on: []
 export: agent-skill
 ---
 
-# Using the brain
+# Using the brain implant
 
-`_brain/` is this project's memory. It is the **best knowledge available at
-the moment, not the truth**: everything in it is provisional, and your job
-when you notice a flaw is to fix the brain, not route around it.
+`_implant/` is a **brain implant**: a public, shared knowledge bundle that an
+agent mounts beside its own memory. In brainpick's terms the agent's own,
+private brain is its **cortex**: exactly one per agent, registered with the
+role `cortex`. Every other registered repository, or a subfolder of one, is
+an **implant**, and there can be any number of them
+([Federation](https://github.com/benquemax/brainpick/blob/main/docs/federation.md)).
+This repository is one of them. The two sides have different jobs:
+
+| | cortex | this implant |
+| --- | --- | --- |
+| whose | the agent's (and its user's) | everyone's — public, shared |
+| holds | opinions, decisions, what *you* concluded | scripture, and what each tradition said, by whom, where |
+| writes | freely | under the contract, for a stranger |
+
+**Your own verdicts never go into the implant**; see *Never endorse* below.
+What is here is the **best knowledge available at the moment, not the
+truth**. Everything is provisional, and when you notice a flaw your job is
+to fix the implant, not route around it.
 
 ## First: pull
 
-**Before reading anything, pull the brain's latest version** (`git pull`
-in the repo that holds it — every brain, if several are mounted). A brain
-is shared memory: other agents and people commit to it between your
+**Before reading anything, pull the implant's latest version** (`git pull`
+in the repository that holds it — the cortex and every implant, if several
+are mounted). An implant is shared memory: other agents and people commit to it between your
 sessions, and an answer built on a stale checkout is built on knowledge
-the brain has already corrected. Pull first, then read; if the pull brings
+the implant has already corrected. Pull first, then read; if the pull brings
 changes, re-read before acting on what you remembered.
 
 ## Reading: most distilled first
 
-1. **The closest brain first.** If several brains are available (this
-   project's, a team's, your personal one), the one closest to the
-   implementation wins when they disagree.
+1. **The closest one first.** If several are mounted (your cortex, this
+   implant, other implants), the one closest to the task wins when they
+   disagree. Only the cortex may hold a *conclusion*; an implant holds
+   what was said and the tools to weigh it. The apologetics implant is the
+   sibling here: it mirrors this implant's book spine in Finnish.
 2. **`conventions/`** — standing rules for how things get done, across
    many tasks. brainpick lists them first in `brain_overview` and the
    AGENTS.md report for a reason: a convention can rule out an approach
@@ -37,14 +54,14 @@ changes, re-read before acting on what you remembered.
 5. **`journals/`** — dated episodes, only when nothing distilled exists.
    Today is `journals/YYYY-MM-DD.md`; earlier days are in
    `journals/archive/YYYY/MM/`.
-6. **`todo/open.md`** — the brain's open work. Check it before planning:
+6. **`todo/open.md`** — the implant's open work. Check it before planning:
    it may already flag what you are about to rediscover.
 7. **`raw/`** — undistilled source material. Not in search results; grep it
    to ground a claim or to distil something new. `raw/translations/`
    holds scripture texts as fetched, each with its LICENCE.md.
 
 With brainpick: `brain_overview` first, then `brain_search`, then
-`brain_read`. Grep only after the brain comes up short.
+`brain_read`. Grep only after the implant comes up short.
 
 ## Writing: distil upward, point, ground
 
@@ -57,7 +74,7 @@ With brainpick: `brain_overview` first, then `brain_search`, then
   it on the first entry of the day; headings inside are free — `## HH:MM`
   or a title, newest first). **Before the first entry of a new day, move
   yesterday's file to `journals/archive/YYYY/MM/`**
-  (`mkdir -p _brain/journals/archive/YYYY/MM && git mv …`) — the contract
+  (`mkdir -p _implant/journals/archive/YYYY/MM && git mv …`) — the contract
   blocks a commit with two unarchived days.
 - **To-dos live in `todo/open.md`.** A task that surfaces mid-work goes
   there as `- [ ] …`. When it is done, tick it `- [x] … (done: YYYY-MM-DD)`
@@ -76,7 +93,8 @@ With brainpick: `brain_overview` first, then `brain_search`, then
   yourself: prune what you have distilled or found worthless. Raw is
   valuable — it is what claims ground on — only while it stays greppable.
 - **Ground every claim inline**, Wikipedia-style, with a plain link: a
-  journal entry (a decision we made), an external page, another brain
+  journal entry (a decision this implant made), an external page, the
+  cortex or another implant
   (`brain://slug-id/path`), or say in words that it is an assumption.
   For scripture, cite the chapter document and the atomic verse token
   (`jhn14v6`); for a theologian's position, cite the work, book/section and
@@ -117,12 +135,13 @@ Always write the human-readable reference next to the token, never the token
 alone. Tokens are generated by the ingest tooling, not typed by hand — see
 [conventions/addressing-scripture.md](../conventions/addressing-scripture.md).
 
-## Several brains: subsidiarity
+## Cortex and several implants: subsidiarity
 
-When brains conflict: the closest wins. Update both. Then decide — keep the
-information duplicated (readers of the farther brain may not have the
+When they conflict, the closest wins. Update both. Then decide — keep the
+information duplicated (readers of the farther implant may not have the
 closer one) or replace it with a `brain://` pointer. Record the episode in
-the journal of the brain that changed.
+the journal of the implant that changed. Never resolve a conflict by writing
+your *verdict* into an implant; that belongs in a cortex entry.
 
 ## Where this comes from
 
@@ -130,5 +149,5 @@ Evergreen concepts live in [Knowledge](../knowledge/index.md); what happened
 and when, in the [Journals](../journals/index.md). The brain format and its
 reasoning live in brainpick's wiki:
 https://github.com/benquemax/brainpick/blob/main/docs/brain.md — data flow, grounding, subsidiarity, and what
-is fixed for life versus cheap to change. Serve this brain with
+is fixed for life versus cheap to change. Serve this implant with
 `brainpick init`, then the `brain_*` MCP tools.

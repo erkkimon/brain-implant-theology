@@ -26,7 +26,7 @@ THE SOFTWARE.
 ## Scripture texts and quoted works
 
 Each carries its own license, recorded with the text. Every translation stored
-under `_brain/raw/translations/` holds a `LICENCE.md` stating its
+under `_implant/raw/translations/` holds a `LICENCE.md` stating its
 redistribution terms, and a machine-checked rule in the contract requires it.
 
 Public-domain editions (for example the King James Version, Textus Receptus

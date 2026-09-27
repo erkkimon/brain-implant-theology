@@ -3,7 +3,7 @@ type: plan
 title: "MVP first, then daily iteration"
 description: "The decided plan for both brain implants: a definition of the minimum lovable product for apologetics and theology, the quickest route to it, and the ordered iteration that follows. Born from Tom's 2026-09-25 instruction to get both brains usable before spending tokens on translation."
 tags: [plan, mvp, roadmap]
-timestamp: 2026-09-26T11:50:00Z
+timestamp: 2026-09-27T10:30:00Z
 ---
 
 # MVP first, then daily iteration
@@ -21,46 +21,46 @@ The decision record is
 
 ## The principle: content before polish
 
-A brain is lovable when Tom can **query it and get useful answers back**, not
+An implant is lovable when Tom can **query it and get useful answers back**, not
 when every page is finished. Semantic search is multilingual once a
 multilingual embedding model is in place, so Finnish content is already
 useful to an English-speaking user, and an imperfect page with working links
 beats an empty folder of perfect intentions. Therefore:
 
 1. Land **algorithmic** work first — conversion, link parsing, spine
-   generation. It costs machine time, not tokens, and it makes the brain
+   generation. It costs machine time, not tokens, and it makes the implant
    navigable immediately.
 2. Then land **mechanical LLM** work in cooldown-sized batches — translation
    and page improvement, one batch per burst.
 3. Polish (theology-original pages, appraisal integration) comes last, because
-   the brain is already earning its keep by then.
+   the implant is already earning its keep by then.
 
 ## MVP defined
 
 ### Apologetics implant — MVP
 
 *Every ApoWiki article is a searchable Finnish markdown page in `knowledge/`,
-with its wiki-links rewritten to brain links that resolve.* Concretely:
+with its wiki-links rewritten to implant links that resolve.* Concretely:
 
 - ~470 substantive articles converted from the wikitext exported to
-  `_brain/raw/apowiki-export/` in the apologetics implant repository
+  `_implant/raw/apowiki-export/` in the apologetics implant repository
   (845 of 848 files carry wiki links, 6 798 of them in total — the
   interlinking comes nearly free from parsing, not from an LLM)
 - redirects resolved, not imported
-- `[[...]]` rewritten to brain links; unresolvable targets kept as visible
+- `[[...]]` rewritten to implant links; unresolvable targets kept as visible
   red links so gaps are greppable
 - book articles for the `Luokka:Kirjat` corpus, each book bound to an article
   about its biblical book (the shared spine — see below)
 - a multilingual embedding model (`bge-m3`) compiled in, so English queries
   find Finnish pages
-- contract green, brain compiled, Tom using it
+- contract green, implant compiled, Tom using it
 
 Explicitly **not** in MVP: English translations, template/`<ref>` fidelity,
 original theology-flavoured pages.
 
 ### Theology implant — MVP
 
-*The spine is whole and the brain is multilingual-searchable.* Concretely:
+*The spine is whole and the implant is multilingual-searchable.* Concretely:
 
 - KJV chapters (already ingested) hanging on book articles, and book articles
   hanging on testament articles — 66 books, 1 189 chapters, the testament
@@ -70,7 +70,7 @@ original theology-flavoured pages.
 - Finnish spine: PR-1933/38 chapters ingested (1992 is licence-blocked)
 - source-language texts ingested (WLC, Textus Receptus, Westcott-Hort) so a
   chapter page carries Hebrew/Greek alongside translations
-- `bge-m3` compiled in (this brain already holds English, will hold Finnish,
+- `bge-m3` compiled in (this implant already holds English, will hold Finnish,
   Greek and Hebrew)
 - contract green, compiled, in use
 
@@ -84,13 +84,21 @@ book bound to a testament article (and to apocrypha where applicable)**.
 The apocrypha are *outside* the spine — the canon articles stand as the
 structure, apocryphal books are ordinary articles that link *to* a canon
 book, never load-bearing rungs. This spine lives in the theology implant and
-is a spine in both brains; the apologetics implant mounts it through
+is a spine in both implants; the apologetics implant mounts it through
 brainpick's federation.
 
-Binding between the brains uses the documented form from the
-[federation spec](https://github.com/benquemax/brainpick/blob/main/docs/federation.md):
-`[[target-path|label]]{brain://brain-id}`. The `brainpick.toml` of each implant
-declares the other under `[brains]` with stable ids (`apologetics`, `theology`).
+Binding between the implants is an **autolink**,
+`<brain://<alias>-<bundle id>/<path>>`, as described in the
+[federation spec](https://github.com/benquemax/brainpick/blob/main/docs/federation.md).
+A markdown link to `brain://` would be reported dead by the contract's link
+check, so the autolink form is required. The bundle id is the 21-character id
+in each repository's `brainpick.toml`: theology `kay4zyljsuy909krumpau`,
+apologetics `3hm51e1pxik7zz5la3bve`. brainpick matches exactly 21 characters,
+so a longer id never resolves
+([journal](../journals/archive/2026/09/2026-09-26.md)). The implants find each
+other through the machine's brainpick registry
+(`brainpick register <repo>/_implant --implant --alias <name>`), not through
+anything committed here.
 
 ## The ordered path
 
@@ -113,7 +121,7 @@ the todo; the milestones are:
    list theology uses (`skills/tools/bookcodes.py`), one article per book,
    chapters joined upward, each book bound to its apologetics articles and
    across to the theology spine.
-5. **Multilingual embeddings in both brains** — `bge-m3` is free and is the
+5. **Multilingual embeddings in both implants** — `bge-m3` is free and is the
    unlock; without it the English-to-Finnish use case that makes the MVP
    lovable does not exist.
 6. **Compile, contract, serve, use.** That is the MVP gate: Tom queries,
@@ -124,11 +132,43 @@ to English → improve it (fix red links it reveals, ground claims, enrich
 links) → commit. Themed slices, not alphabetical runs, so each batch leaves a
 coherent sub-domain finished.
 
+## Status and how to resume
+
+Read this first when coming back after a break. The live checklist is
+[../todo/open.md](../todo/open.md), and the latest journal says what happened
+last.
+
+- **Done (2026-09-26):** Phase 1, the spine. There are 66 book pages and 2
+  testament pages, and all 1 189 KJV chapters hang on them. Each book page
+  has a `## In the apologetics implant` autolink to its Finnish rung. `bge-m3`
+  vectors are built, and semantic search finds passages by meaning.
+- **Done (2026-09-27):** the bundle root is `_implant/` (formerly `_brain/`).
+  This repository is an implant; the cortex is the agent's own brain
+  ([journal](../journals/2026-09-27.md)).
+- **Next, machine time:** Phase 2's live annotation check, then Phase 3 texts
+  (PR-1933/38, WLC, TR, Westcott–Hort), each via
+  [Add a Bible translation](../skills/add-bible-translation.md).
+- **Then:** the Phase 4 gate. Tom uses both implants on a real question.
+  No translation tokens are spent before he calls it lovable.
+
+To resume on any machine:
+
+1. `git pull --ff-only`, then `brainpick compile --root .` from the repository
+   root. Vectors (T2) are machine-local and take a while; run
+   `brainpick compile --root . --only t2` in the background, and check it with
+   `brainpick doctor --root .`. Embeddings need a `bge-m3` endpoint in the
+   gitignored `brainpick.local.toml`.
+2. Register both implants if they are not registered yet:
+   `brainpick register <repo>/_implant --implant --alias theology` (and
+   `apologetics`).
+3. Work down `todo/open.md` in phase order. Journal in today's file, archive
+   yesterday's, and commit and push each finished step.
+
 ## Where this came from
 
 Tom's instruction of 2026-09-25 (MVP first, algorithmic conversion and
 interlinking, Finnish first because multilingual semantic search makes it
 usable immediately, cooldown-batched translation afterwards, everything on a
 visible to-do list), and the decision to found the spine this way recorded in
-this brain's journal on 2026-09-25. The 6 798-link figure above was measured
+this implant's journal on 2026-09-25. The 6 798-link figure above was measured
 directly from the raw export on 2026-09-25.

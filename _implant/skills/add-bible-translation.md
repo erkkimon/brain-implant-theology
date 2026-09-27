@@ -2,11 +2,11 @@
 type: skill
 about: procedure
 title: Add a Bible translation
-description: "How to bring a new scripture translation into this brain: clear its licence first and record the reasoning, store the raw source with a LICENCE.md beside it, then run the deterministic ingest tool that emits one chapter document per chapter with atomic verse tokens — never hand-write a token, and never store text whose redistribution terms you have not read."
+description: "How to bring a new scripture translation into this implant: clear its licence first and record the reasoning, store the raw source with a LICENCE.md beside it, then run the deterministic ingest tool that emits one chapter document per chapter with atomic verse tokens — never hand-write a token, and never store text whose redistribution terms you have not read."
 tags: [skill, scripture, ingest, licensing, translations]
-depends_on: [skills/using-the-brain.md]
+depends_on: [skills/using-the-brain-implant.md]
 tools: [skills/tools/bible_ingest.py, skills/tools/bookcodes.py]
-timestamp: 2026-09-25T22:30:00Z
+timestamp: 2026-09-27T10:30:00Z
 half_life: 0
 ---
 
@@ -53,7 +53,7 @@ a licensing failure in public, not a bug that can be quietly patched.
 ## 2. Store the raw source with its licence beside it
 
 ```
-_brain/raw/translations/<name>/
+_implant/raw/translations/<name>/
     <name>.json      the source as obtained, unmodified
     LICENCE.md       terms, provenance, retrieval date, a verification quote
 ```
@@ -68,10 +68,10 @@ kebab-case rule, because a licence nobody spots is a licence nobody honours.
 ## 3. Run the ingest tool
 
 ```bash
-python3 _brain/skills/tools/bible_ingest.py \
-    --source _brain/raw/translations/kjv/kjv.json \
+python3 _implant/skills/tools/bible_ingest.py \
+    --source _implant/raw/translations/kjv/kjv.json \
     --name "King James Version" --abbrev KJV \
-    --out _brain/knowledge/scripture
+    --out _implant/knowledge/scripture
 ```
 
 It expects `{translation, books:[{name, chapters:[{chapter, verses:[{verse,
