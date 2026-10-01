@@ -19,7 +19,12 @@ settings:
     # 1,189 generated files pairwise makes the pre-commit hook take minutes.
     # The rule still applies to everything written by hand.
     ignore: ["**/__init__.py", "**/index.md", "**/log.md", "**/skilltree.md",
-             "_implant/knowledge/scripture/**"]
+             "_implant/knowledge/scripture/**", "_implant/raw/**"]
+    # raw/ is fetched source data (translation files, mapping tables), not
+    # hand-written prose; the diff over the 27 Westcott-Hort files and the
+    # Hebrew JSON ran for over twenty minutes. `budget` (seconds) caps the
+    # scan so a bulk import can never hang the commit again.
+    budget: 60
 
 # Add rules as you go. `henxels explain <path>` shows what applies to a path.
 henxels:

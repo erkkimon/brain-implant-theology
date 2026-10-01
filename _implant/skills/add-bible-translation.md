@@ -5,8 +5,8 @@ title: Add a Bible translation
 description: "How to bring a new scripture translation into this implant: clear its licence first and record the reasoning, store the raw source with a LICENCE.md beside it, then run the deterministic ingest tool that emits one chapter document per chapter with atomic verse tokens — never hand-write a token, and never store text whose redistribution terms you have not read."
 tags: [skill, scripture, ingest, licensing, translations]
 depends_on: [skills/using-the-brain-implant.md]
-tools: [skills/tools/bible_ingest.py, skills/tools/bookcodes.py]
-timestamp: 2026-09-27T14:00:00Z
+tools: [skills/tools/bible_ingest.py, skills/tools/bookcodes.py, skills/tools/versification_remap.py, skills/tools/wh_convert.py]
+timestamp: 2026-10-01T18:07:11Z
 half_life: 0
 ---
 
@@ -79,8 +79,10 @@ deuterocanonical books a source carries, listed by name in the tool, since
 they stay outside the spine. `--at` sets the timestamp of the chapters this
 run changes; unchanged chapters keep theirs, so a re-run still diffs empty.
 Verses with empty text are skipped, because some sources pad the testament
-they lack. Stored so far: KJV, Raamattu 1933/38 (`PR1938`) and the Textus
-Receptus (`TR`, New Testament).
+they lack. Stored so far: KJV, Raamattu 1933/38 (`PR1938`), the Textus
+Receptus (`TR`, New Testament), the Westminster Leningrad Codex (`WLC`,
+Old Testament, through the remap in step 3a) and Westcott–Hort (`WH`, New
+Testament, from a non-JSON source: see step 3b).
 
 It expects `{translation, books:[{name, chapters:[{chapter, verses:[{verse,
 text}]}]}]}`. A source in another shape gets a small adapter script, not a
@@ -97,6 +99,47 @@ What it produces, per chapter:
 It is **idempotent**: re-running produces byte-identical files, so a re-ingest
 diffs empty. If it reports every chapter rewritten on a second run, something
 is wrong — investigate rather than commit the churn.
+
+## 3a. A source in another versification: remap first
+
+If the source's verse counts differ from `kjv.json` (the Hebrew texts do),
+do not ingest it directly. Run the remap, then ingest its output:
+
+```bash
+python3 _implant/skills/tools/versification_remap.py \
+    --source _implant/raw/translations/wlc/wlc.json \
+    --mapping _implant/raw/translations/wlc/versification-eng.json \
+    --shape _implant/raw/translations/kjv/kjv.json --out _temp/wlc-kjv.json
+python3 _implant/skills/tools/bible_ingest.py --source _temp/wlc-kjv.json \
+    --name "Westminster Leningrad Codex" --abbrev WLC --out _implant/knowledge/scripture
+```
+
+The mapping is the Copenhagen Alliance `eng` table, stored beside the source
+with its licence terms. The remap stops on any verse it cannot place exactly
+once or any count that differs from the KJV, and prints a note for each case
+it resolved by rule (a joined title verse, a half-verse left without text).
+The remapped file is scratch and stays in `_temp/`.
+
+## 3b. A source that is not the expected JSON: a converter first
+
+The ingest wants the JSON shape above. A source in another form gets a small
+converter beside it, never a hand-edit. `skills/tools/wh_convert.py` is the
+worked example: Westcott–Hort arrives as one file per book in Latin-letter
+Greek with editorial apparatus inside the text. The converter transliterates,
+strips and reports each piece of apparatus, resolves each ambiguity by an
+explicit named rule, and stops on anything it does not recognise. Check the
+result against a text already stored (WH against `TR`: 94% word-sequence
+similarity, John 14:6 differing exactly where the editions differ) before
+ingesting. A verse the source leaves empty is skipped, so its token has no
+section for that translation, which is true to the edition.
+
+```bash
+python3 _implant/skills/tools/wh_convert.py \
+    --source-dir _implant/raw/translations/wh/source \
+    --shape _implant/raw/translations/kjv/kjv.json --out _temp/wh.json
+python3 _implant/skills/tools/bible_ingest.py --source _temp/wh.json \
+    --name "Westcott-Hort Greek New Testament" --abbrev WH --out _implant/knowledge/scripture
+```
 
 ## 4. Adding a second translation to existing chapters
 
@@ -134,7 +177,7 @@ has hung.
 * **Never ingest a text in another versification as if it were KJV's.**
   The tokens follow the KJV numbering. Before ingesting, compare verse counts
   per chapter with `kjv.json`: FinPR and TR match (2 and 0 differing
-  chapters), WLC does not (138 of 929). A mismatch needs a versification map,
-  or the wrong verse lands under a token and nothing complains.
+  chapters), WLC does not (138 of 929). A mismatch needs a versification map
+  (step 3a), or the wrong verse lands under a token and nothing complains.
 * **Never edit `knowledge/scripture/` by hand.** The files are generated. Fix
   the source or the tool, then re-run.

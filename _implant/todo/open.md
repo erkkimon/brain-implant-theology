@@ -2,7 +2,7 @@
 type: todo
 title: Open work
 description: "The live work queue for the theology implant — what is decided, unstarted, and waiting."
-timestamp: 2026-09-27T14:00:00Z
+timestamp: 2026-10-01T20:21:38Z
 ---
 
 # Open
@@ -22,8 +22,8 @@ Done 2026-09-26 — see [the archive](archive/2026-09-26.md).
 
 ## Phase 3 — Fill the spine with texts (machine time)
 
-- [ ] Ingest Biblia Hebraica (WLC) through a versification map: WLC numbers verses the Hebrew way, and 138 of its 929 chapters differ in verse count from the KJV numbering the tokens use (Gen 31–32, Exod 7–8, Mal 3–4 …). A naive ingest would put the wrong Hebrew under a token. Source: `scrollmapper/bible_databases` `formats/json/WLC.json` (MIT compilation, public-domain text)
-- [ ] Ingest Westcott–Hort (not in `scrollmapper/bible_databases`; find a cleared source first)
+Done 2026-10-01 — see [the archive](archive/2026-10-01.md).
+
 
 ## Phase 4 — The MVP gate
 
@@ -32,6 +32,7 @@ Done 2026-09-26 — see [the archive](archive/2026-09-26.md).
 
 ## Phase 5+ — Daily iteration (token work, one batch per cooldown burst)
 
+- [ ] Mary Magdalene follow-ups: store Gregory's Homily 33 and the Orthodox liturgical texts from primary editions, then replace the second-hand quotations on [the page](../knowledge/doctrines/mary-magdalene.md); write the apocryphal Magdalene article under the spine rule
 - [ ] Draft the theologian article template and ingest the first figure across two traditions to prove the neutrality rule holds in practice
 - [ ] Doctrine pages, one tradition-comparison at a time, each grounded in the verse tokens it cites
 - [ ] Port the Bayesian appraisal tool via the federated common implant, shared with the apologetics and stem implants

@@ -3,7 +3,7 @@ type: plan
 title: "MVP first, then daily iteration"
 description: "The decided plan for both brain implants: a definition of the minimum lovable product for apologetics and theology, the quickest route to it, and the ordered iteration that follows. Born from Tom's 2026-09-25 instruction to get both brains usable before spending tokens on translation."
 tags: [plan, mvp, roadmap]
-timestamp: 2026-09-27T14:00:00Z
+timestamp: 2026-10-01T19:10:17Z
 ---
 
 # MVP first, then daily iteration
@@ -144,14 +144,18 @@ last.
   vectors are built, and semantic search finds passages by meaning.
 - **Done (2026-09-27):** the bundle root is `_implant/` (formerly `_brain/`).
   This repository is an implant; the cortex is the agent's own brain
-  ([journal](../journals/2026-09-27.md)).
+  ([journal](../journals/archive/2026/09/2026-09-27.md)).
 - **Done (2026-09-27):** the live annotation check passed. `brain_read` on a
   theology book page lists the apologetics rung, and the reverse works too.
   Raamattu 1933/38 (`PR1938`, 1 189 chapters) and the Textus Receptus
   (`TR`, 260 NT chapters) now sit beside the KJV in every chapter file.
-- **Next, machine time:** WLC through a versification map, then
-  Westcott–Hort, each via
-  [Add a Bible translation](../skills/add-bible-translation.md).
+- **Done (2026-10-01):** the Hebrew text. WLC (929 chapters) is the `WLC`
+  section of every Old Testament chapter, re-numbered to the KJV tokens
+  through the standard `eng` versification map
+  ([journal](../journals/archive/2026/10/2026-10-01.md)).
+- **Done (2026-10-01):** Westcott–Hort (`WH`, 260 NT chapters), from
+  Robinson's public-domain electronic text, converted by
+  `skills/tools/wh_convert.py`. All planned source-language texts are in.
 - **Then:** the Phase 4 gate. Tom uses both implants on a real question.
   No translation tokens are spent before he calls it lovable.
 

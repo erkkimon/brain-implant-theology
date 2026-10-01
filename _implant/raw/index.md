@@ -14,4 +14,8 @@ this folder from search results; grep it.
   survey — which translations were cleared, which were rejected, and why.
   Currently holds `kjv/` (public domain) and `finpr/` (Raamattu 1933/38,
   copyright expired; the chapters carry it as the `PR1938` section) and
-  `tr/` (Textus Receptus, public domain; the New Testament's `TR` section).
+  `tr/` (Textus Receptus, public domain; the New Testament's `TR` section)
+  and `wlc/` (Westminster Leningrad Codex, public domain; the Old
+  Testament's `WLC` section, with the CC BY-SA `eng` versification map it is
+  re-numbered by) and `wh/` (Westcott–Hort, public domain; the New
+  Testament's `WH` section, as Robinson’s Latin-letter source files (`*.txt`)).
