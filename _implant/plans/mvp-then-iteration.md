@@ -3,7 +3,7 @@ type: plan
 title: "MVP first, then daily iteration"
 description: "The decided plan for both brain implants: a definition of the minimum lovable product for apologetics and theology, the quickest route to it, and the ordered iteration that follows. Born from Tom's 2026-09-25 instruction to get both brains usable before spending tokens on translation."
 tags: [plan, mvp, roadmap]
-timestamp: 2026-10-01T19:10:17Z
+timestamp: 2026-10-02T07:50:33Z
 ---
 
 # MVP first, then daily iteration
@@ -156,8 +156,10 @@ last.
 - **Done (2026-10-01):** Westcott–Hort (`WH`, 260 NT chapters), from
   Robinson's public-domain electronic text, converted by
   `skills/tools/wh_convert.py`. All planned source-language texts are in.
+- **Done (2026-10-01):** the first doctrine page, [Mary Magdalene](../knowledge/doctrines/mary-magdalene.md), written ahead of the gate at Tom's request. It reports one contested question with receipts, and quotes Gregory, the Orthodox position and the Fathers at second hand until primary editions are stored (open in the to-do list).
+- **Parked (2026-10-02):** work stops here until the week of 2026-10-05. The contract is green, the text index and the vectors are fresh, and everything is pushed.
 - **Then:** the Phase 4 gate. Tom uses both implants on a real question.
-  No translation tokens are spent before he calls it lovable.
+  No translation tokens are spent before he calls it lovable. He will report bugs from real use; fixing them comes before any Phase 5 work.
 
 To resume on any machine:
 
